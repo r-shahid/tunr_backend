@@ -3,9 +3,9 @@ class RostersController < ApplicationController
 
   # GET /rosters
   def index
-    @rosters = Roster.all
-
-    render json: @rosters
+    # @rosters = Roster.all
+    @songs = Song.where(isFavorite: true)
+    render json: @songs
   end
 
   # GET /rosters/1

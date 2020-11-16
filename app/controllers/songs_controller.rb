@@ -3,8 +3,8 @@ class SongsController < ApplicationController
 
   # GET /songs
   def index
-    @songs = Song.where(isFavorite: true)
-    # @songs = Song.all
+    # @songs = Song.where(isFavorite: true)
+    @songs = Song.all
 
     render json: @songs
   end
