@@ -3,15 +3,17 @@ class SongsController < ApplicationController
 
   # GET /songs
   def index
-    @songs = Song.all
+    @songs = Song.where(isFavorite: true)
+    # @songs = Song.all
 
     render json: @songs
   end
 
   # GET /songs/1
-  def show
-    render json: @song
-  end
+  # def show
+  #   @song = Song.find(params[:id])
+  #   render json: @song
+  # end
 
   # POST /songs
   def create
